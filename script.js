@@ -1,3 +1,22 @@
+// JavaScript to play the birthday song
+function playSong() {
+    const audio = document.getElementById('birthdaySong');
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+// Function to extinguish candles
+function extinguishCandle(candle) {
+  const flame = candle.querySelector('.flame');
+  if (flame) {
+    flame.style.animation = 'fadeOut 0.5s forwards';
+    flame.addEventListener('animationend', () => flame.remove());
+  }
+}
+
+// Detect loud "blow" sound
 function detectBlowSound() {
   navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
     const audioContext = new AudioContext();
@@ -13,7 +32,7 @@ function detectBlowSound() {
       const volume = dataArray.reduce((a, b) => a + b) / dataArray.length;
 
       // Adjusted volume threshold for whisper sound
-      if (volume > 20 && volume <= 50) { // Whisper-blown threshold
+      if (volume > 100 && volume <= 200) { // Whisper-blown threshold
         const candles = document.querySelectorAll('.candle');
         candles.forEach((candle) => {
           extinguishCandle(candle);
