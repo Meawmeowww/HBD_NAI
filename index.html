@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="frame">
+    <div class="cake">
+      <div class="plate"></div>
+      <div class="layer layer-bottom"></div>
+      <div class="layer layer-middle"></div>
+      <div class="layer layer-top">
+        <div class="icing">
+          <div class="drip drip1"></div>
+          <div class="drip drip2"></div>
+          <div class="drip drip3"></div>
+        </div>
+      </div>
+      <!-- Multiple Cherries -->
+      <div class="cherries">
+        <div class="cherry cherry1"></div>
+        <div class="cherry cherry2"></div>
+        <div class="cherry cherry3"></div>
+        <div class="cherry cherry4"></div>
+        <div class="cherry cherry5"></div>
+      </div>
+      <div class="candles">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+      </div>
+    </div>
+    <div class="animated-text">Love you Nai</div>
+    <div class="text">Happy Birthday!</div>
+  </div>
+
+  <!-- Audio Section -->
+  <audio id="birthdaySong" loop>
+    <source src="happy_birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Play Button -->
+  <button class="play-button" onclick="playSong()">Play Song</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

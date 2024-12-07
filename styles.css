@@ -1,0 +1,246 @@
+/* General Body Styles */
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #87CEFA, #FFC0CB); /* Gradient: Blue to Pink */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Golden Frame */
+.frame {
+  border: 15px solid gold; /* Golden border */
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cake and Plate */
+.cake {
+  position: relative;
+  width: 300px;
+  height: 250px;
+}
+
+.plate {
+  width: 350px;
+  height: 120px;
+  position: absolute;
+  bottom: -30px;
+  left: -25px;
+  background-color: #87CEEB;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Layers */
+.layer {
+  position: absolute;
+  width: 300px;
+  height: 80px;
+  border-radius: 15px;
+  left: 0;
+}
+
+.layer-bottom {
+  background-color: #3E2723; /* Dark chocolate */
+  bottom: 0;
+}
+
+.layer-middle {
+  background-color: #4E342E; /* Lighter chocolate */
+  bottom: 80px;
+}
+
+.layer-top {
+  background-color: #A5D6A7; /* Mint color */
+  bottom: 160px;
+}
+
+/* Icing */
+.icing {
+  position: absolute;
+  width: 320px;
+  height: 90px;
+  left: -10px;
+  border-radius: 15px;
+  background: #A5D6A7; /* Mint icing */
+  z-index: 1;
+  overflow: hidden;
+}
+
+.icing::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 20px;
+  background: inherit;
+  border-radius: 50%;
+  top: -10px;
+  z-index: 0;
+}
+
+/* Drips */
+.drip {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  background-color: #A5D6A7;
+  border-radius: 50%;
+  bottom: -30px;
+}
+
+.drip1 {
+  left: 50px;
+}
+
+.drip2 {
+  left: 120px;
+}
+
+.drip3 {
+  left: 200px;
+}
+
+/* Cherries */
+.cherries .cherry {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #D32F2F; /* Cherry red */
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cherry1 { top: -20px; left: 30px; }
+.cherry2 { top: -20px; left: 70px; }
+.cherry3 { top: -20px; left: 130px; }
+.cherry4 { top: -20px; left: 190px; }
+.cherry5 { top: -20px; left: 250px; }
+
+/* Cherry Stems */
+.cherry::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background-color: #388E3C; /* Green stem */
+  border-radius: 2px;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Candles */
+.candles {
+  position: absolute;
+  top: -40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.candle {
+  width: 12px;
+  height: 50px;
+  background: #FF4500;
+  border-radius: 6px / 3px;
+  position: relative;
+}
+
+.candle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #FF6347;
+  top: 0;
+  border-radius: 50%;
+}
+
+.flame {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 12px;
+  height: 20px;
+  background: orange;
+  border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+  margin-left: -6px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.5);
+  animation: flicker 1s infinite alternate;
+}
+
+/* Flame Flickering */
+@keyframes flicker {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Happy Birthday Text */
+.text {
+  margin-top: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.6), 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Play Button */
+.play-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(135deg, #FF4500, #FF6347);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #FF6347, #FF4500);
+}
+
+.play-button:active {
+  transform: scale(0.9);
+}
+
+/* Animated Text: Love you Nai */
+.animated-text {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(255, 255, 255, 0.5);
+  animation: fadeInOut 3s infinite ease-in-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+  }
+}
