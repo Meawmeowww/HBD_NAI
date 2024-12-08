@@ -32,7 +32,7 @@ function detectBlowSound() {
       const volume = dataArray.reduce((a, b) => a + b) / dataArray.length;
 
       // Adjusted volume threshold for whisper sound
-      if (volume > 100 && volume <= 200) { // Whisper-blown threshold
+      if (volume > 20 && volume <= 50) { // Whisper-blown threshold
         const candles = document.querySelectorAll('.candle');
         candles.forEach((candle) => {
           extinguishCandle(candle);
